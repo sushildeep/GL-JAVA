@@ -28,6 +28,8 @@ jobs:
       env: 
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+       
+  # Maven Build     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
@@ -44,3 +46,10 @@ jobs:
         coordinates: 'Component coordinates in key=value format. e.g. groupId=com.example artifactId=app version=1.0.0 ('directory=nexus-repo-github-action-test-rawrepodir)
         assets: extension=war
         filename: ./target/filename.war
+  #  Call Ansible playbook using shell script
+  
+    - name: Run Ansible playbook
+      run: |
+         chmod +x ./public/scripts/test.sh (location of your shell script )
+         ./public/scripts/test.sh
+      shell: bash
