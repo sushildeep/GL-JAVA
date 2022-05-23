@@ -1,0 +1,8 @@
+---
+- hosts: localhosts
+  sudo: yes
+  tasks:
+  - name: install add-apt-repostory
+    become: yes
+    apt: name=software-properties-common state=latest
+  - name: Add  

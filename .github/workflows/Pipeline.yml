@@ -50,6 +50,6 @@ jobs:
   
     - name: Run Ansible playbook
       run: |
-         chmod +x ./public/scripts/test.sh (location of your shell script )
-         ./public/scripts/test.sh
+         chmod +x ./scripts/runplaybook.sh (location of your shell script )
+         ./runplaybook.sh - 
       shell: bash
